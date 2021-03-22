@@ -24,7 +24,7 @@ public class Solution {
         }
 
         for (Map.Entry<Integer, Integer> socksOfCurrentColor: socksByColor.entrySet()){
-            numberOfPairs += socksOfCurrentColor.getValue()2;
+            numberOfPairs += socksOfCurrentColor.getValue();
         }
 
         return numberOfPairs;
