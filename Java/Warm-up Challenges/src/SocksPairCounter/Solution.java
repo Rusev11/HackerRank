@@ -23,8 +23,8 @@ public class Solution {
             }
         }
 
-        for (Map.Entry<Integer, Integer> socksOfCurrentColor : socksByColor.entrySet()) {
-            numberOfPairs += socksOfCurrentColor.getValue() / 2;
+        for (Map.Entry<Integer, Integer> socksOfCurrentColor: socksByColor.entrySet()){
+            numberOfPairs += socksOfCurrentColor.getValue()2;
         }
 
         return numberOfPairs;
