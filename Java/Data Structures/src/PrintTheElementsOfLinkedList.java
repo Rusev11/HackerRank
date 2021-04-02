@@ -29,13 +29,10 @@ public class PrintTheElementsOfLinkedList {
 
     public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep) throws IOException {
         while (node != null) {
-            System.out.println(String.valueOf(node.data));
+            System.out.println(node.data);
 
             node = node.next;
 
-            if (node != null) {
-//                bufferedWriter.write(sep);
-            }
         }
     }
 
@@ -57,16 +54,15 @@ public class PrintTheElementsOfLinkedList {
         }
         SinglyLinkedListNode tempNode = head;
         while (tempNode.next != null) {
-            tempNode = head.next;
+            tempNode = tempNode.next;
         }
         tempNode.next = new SinglyLinkedListNode(data);
-        return tempNode.next;
+        return head;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        SinglyLinkedListNode firstNode = null;
         SinglyLinkedList llist = new SinglyLinkedList();
         int[] input = {141, 302, 164, 530, 474};
 
@@ -75,15 +71,13 @@ public class PrintTheElementsOfLinkedList {
             int llistItem = input[i];
 
             SinglyLinkedListNode llist_head = insertNodeAtTail(llist.head, llistItem);
-            if(llist_head.data == 141){
-                firstNode = llist_head;
-            }
+
             llist.head = llist_head;
 
         }
 
 
-        printSinglyLinkedList(firstNode, "\n");
+        printSinglyLinkedList(llist.head, "\n");
 
 
         scanner.close();
