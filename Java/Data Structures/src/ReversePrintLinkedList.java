@@ -1,9 +1,8 @@
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
-public class DeleteNodeInLinkedList {
+public class ReversePrintLinkedList {
 
     static class SinglyLinkedListNode {
         public int data;
@@ -79,6 +78,23 @@ public class DeleteNodeInLinkedList {
         return head;
     }
 
+    static void reversePrint(SinglyLinkedListNode head) {
+        List <SinglyLinkedListNode> reversedList = new ArrayList<>();
+        if(head.next == null){
+            System.out.println(head.data);
+        }
+        SinglyLinkedListNode tempNode = head;
+
+        while(tempNode.next != null){
+            reversedList.add(tempNode);
+            tempNode = tempNode.next;
+        }
+        reversedList.add(tempNode);
+        for (int i = reversedList.size()-1; i >=0 ; i--) {
+            System.out.println(reversedList.get(i).data);
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         SinglyLinkedList llist = new SinglyLinkedList();
 
@@ -96,5 +112,8 @@ public class DeleteNodeInLinkedList {
 //        insertNodeAtPosition(llist.head, 1, 2);
 
         printSinglyLinkedList(llist.head);
+
+        reversePrint(llist.head);
+
     }
 }
